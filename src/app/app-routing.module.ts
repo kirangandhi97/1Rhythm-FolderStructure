@@ -15,7 +15,15 @@ const routes: Routes = [
       },
       {
         path: 'home', component: HomeComponent
-      }
+      },
+      {
+        path: 'artist',
+        loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule)
+      },
+      {
+        path: 'studio',
+        loadChildren: () => import('./studio/studio.module').then(m => m.StudioModule)
+      },
     ]
   },
   {
@@ -25,9 +33,7 @@ const routes: Routes = [
   {
     path: 'registration',
     loadChildren: () => import('./user/registration/registration.module').then(m => m.RegistrationModule)
-  },
-  { path: 'artist', loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule) },
-  { path: 'studio', loadChildren: () => import('./studio/studio.module').then(m => m.StudioModule) },
+  }
 
 ];
 
